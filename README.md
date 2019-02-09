@@ -49,8 +49,8 @@ scale images, so how different are any of them really?
 
 ## TODOs:
 
-- [ ] Pick the computer vision stack you want to use
-- [ ] Set up a docker environment for running said CV stack
+- [x] Pick the computer vision stack you want to use
+- [x] Set up a docker environment for running said CV stack
 - [ ] Go through an CV tutorial
 - [ ] Look up how to process TIFF files by layer
 - [ ] Create/find a simple diagnostic tool for viewing side by side
@@ -63,3 +63,11 @@ scale images, so how different are any of them really?
       store them in a (TBD: data structure) which we will query
 
 [challenge]: https://github.com/amnh/HackTheSolarSystem/wiki/3D-and-2D-Bubbles-In-Rock
+
+## Journal
+
+### 17:30
+
+Took my sweet time up to this point, but I've now picked the computer
+vision library I want to use (OpenCV), and set up the Docker
+boilerplate for using it.

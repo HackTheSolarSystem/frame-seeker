@@ -1,2 +1,4 @@
-ipython
+ImageHash
 Pillow
+ipython
+scipy

@@ -10,6 +10,10 @@ def run_test():
     frames = Frames(examples)
     example = frames._frames[122].img.filename
     results = frames.get_n_most_similar(example, 1000)
+    for i in range(1, len(results)):
+        prev = results[i-1]
+        curr = results[i]
+        assert(prev.diff <= curr.diff)
 
 # examples = [
 #     pkg_resources.resource_filename('seek_frame', data_fmt.format(name))

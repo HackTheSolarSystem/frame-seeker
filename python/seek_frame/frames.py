@@ -13,7 +13,7 @@ import imagehash
 
 LARGE_NUM = float('inf')
 
-Frame = namedtuple('Frame', ['phash_str', 'phash', 'img'])
+Frame = namedtuple('Frame', ['phash', 'img'])
 Similarity = namedtuple('Similarity', ['diff', 'frame'])
 
 
@@ -27,16 +27,14 @@ class Frames:
     """
 
     def __init__(self, paths):
-        imgs = (PIL.Image.open(path) for path in paths)
-        pairs = ((imagehash.phash(img), img) for img in imgs)
         self._frames = sorted(
             (
-                Frame(phash_str=str(pair[0]), phash=pair[0], img=pair[1])
-                for pair in pairs
+                Frame(phash=int(str(imagehash.phash(img)), base=16), img=img)
+                for img in (PIL.Image.open(path) for path in paths)
             ),
-            key=lambda frame: frame.phash_str
+            key=lambda frame: frame.phash
         )
-        self._keys = [f.phash_str for f in self._frames]
+        self._keys = [f.phash for f in self._frames]
 
     def get_n_most_similar(self, img, n=1):
         """
@@ -44,9 +42,8 @@ class Frames:
         """
         if isinstance(img, str):
             img = PIL.Image.open(img)
-        phash = imagehash.phash(img)
-        phash_str = str(phash)
-        low = bisect.bisect_left(self._keys, phash_str)
+        phash = int(str(imagehash.phash(img)), base=16)
+        low = bisect.bisect_left(self._keys, phash)
         high = low + 1
         results = []
         n = min(n, len(self._keys))

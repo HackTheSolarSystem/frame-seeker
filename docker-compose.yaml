@@ -1,7 +1,7 @@
 version: '3'
 services:
-  pipeline:
+  frame-seeker:
     build:
       context: .
       dockerfile: Dockerfile
-    command: run-frame-finder
+    command: run-seek-frame test

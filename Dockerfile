@@ -2,13 +2,14 @@ FROM jjanzic/docker-python3-opencv
 LABEL maintainer "Chuck Bassett <chucksmash@users.noreply.github.com>"
 
 RUN mkdir -p /opt/seek_frame/{bin,seek_frame}
-RUN mkdir -p /opt/data
 
 RUN pip install --upgrade pip
 COPY ./requirements.txt /opt/seek_frame/requirements.txt
 RUN pip install -r /opt/seek_frame/requirements.txt
 
-COPY ./python/data /opt/data
+COPY ./python/data.zip /opt/data.zip
+RUN unzip /opt/data.zip -d /opt/
+# COPY ./python/data /opt/data
 COPY ./python/setup.py /opt/seek_frame/setup.py
 COPY ./README.md /opt/seek_frame
 COPY ./python/seek_frame/ /opt/seek_frame/seek_frame/

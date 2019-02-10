@@ -4,7 +4,7 @@
 Entry point for frame_finder app
 """
 
-from frame_finder import run
+from seek_frame import main
 
 if __name__ == '__main__':
-    run()
+    main()

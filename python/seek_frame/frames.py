@@ -56,8 +56,6 @@ class Frames:
             if high < len(self._frames):
                 high_frame = self._frames[high]
                 high_diff = abs(phash - high_frame.phash)
-            print("low: {}, high: {}, low_diff: {}, high_diff: {}".format(
-                low, high, low_diff, high_diff))
             if high_diff <= low_diff:
                 # prefer high since we are bisecting left
                 result_diff = high_diff

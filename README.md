@@ -11,7 +11,7 @@ subchallenge, quoted below:
 
 ### Created by Team Hashalot
 
-* Chuck Bassett [chucksmash][profile]
+* Chuck Bassett [[chucksmash][profile]]
 
 ### Solution Description
 
@@ -44,14 +44,29 @@ The project includes a Dockerfile. To run the project, you'll need to
 install `docker`; to follow the run steps below, you'll also need to
 install `docker-compose`.
 
-1. Build the Docker image:
+1. Checkout the project:
+
+``` bash
+$ git clone git@github.com:hackthesolarsystem/frame-seeker.git
+$ cd frame-seeker
+```
+
+2. Download the `Sem2_YZ_8a.zip` file from the problem's
+   [resources][data] page. Save it under the `python` directory as
+   `data.zip`:
+
+``` bash
+$ cp Sem2_YZ_8a.zip python/data.zip
+```
+
+3. Build the Docker image:
 
 ``` bash
 $ cd path/to/project/root
 $ docker-compose build
 ```
 
-2. Run the Docker image:
+4. Run the Docker image:
 
 ``` bash
 $ docker-compose run seek_frame  # TBD
@@ -59,3 +74,4 @@ $ docker-compose run seek_frame  # TBD
 
 [challenge]: https://github.com/amnh/HackTheSolarSystem/wiki/3D-and-2D-Bubbles-In-Rock
 [profile]: https://github.com/chucksmash
+[data]: https://drive.google.com/drive/folders/1_fAGa5JhpQ12m5kjdLRa2G-roak3s16I

@@ -34,6 +34,8 @@ setup(
     url='https://github.com/chucksmash/amnh-hack-2019.git',
     keywords='bse tiff amnh ct',
     packages=find_packages(exclude=['tests']),
+    package_dir={'frame_finder': 'frame_finder'},
+    package_data={'frame_finder': ['examples/*.tif']},
     long_description=read('README.md'),
     classifiers=[
         'Development Status :: 4 - Beta',

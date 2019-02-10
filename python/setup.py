@@ -3,7 +3,7 @@ import re
 from setuptools import setup, find_packages
 
 
-PACKAGE_NAME = 'frame_finder'
+PACKAGE_NAME = 'seek_frame'
 PACKAGE_DIR = os.path.dirname(__file__)
 SCRIPT_DIR = os.path.join(PACKAGE_DIR, 'bin')
 
@@ -34,11 +34,9 @@ setup(
     url='https://github.com/chucksmash/amnh-hack-2019.git',
     keywords='bse tiff amnh ct',
     packages=find_packages(exclude=['tests']),
-    package_dir={'frame_finder': 'frame_finder'},
-    package_data={'frame_finder': ['examples/*.tif']},
     long_description=read('README.md'),
     classifiers=[
-        'Development Status :: 4 - Beta',
+        'Development Status :: 3 - Alpha',
         'Environment :: Console',
         'Intended Audience :: End Users/Desktop',
         'License :: OSI Approved :: MIT License',
@@ -49,6 +47,6 @@ setup(
         # see requirements.txt yo
     ],
     scripts=[
-        get_script_path('run-frame-finder'),
+        get_script_path('run-seek-frame'),
     ],
 )

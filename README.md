@@ -71,3 +71,24 @@ scale images, so how different are any of them really?
 Took my sweet time up to this point, but I've now picked the computer
 vision library I want to use (OpenCV), and set up the Docker
 boilerplate for using it.
+
+### 04:42
+
+Gave up on this for the night. Had a lot of trouble with the 16bit
+gray scale TIFFs and Pillow, but the 8bit grayscale TIFFs look
+reasonable.
+
+I'm going to lay down for a couple of hours now. When I wake up, I'm
+planning to write some code to put the phashes into a sorted
+list. When we go to match a BSE against that list, we'll just bisect
+until we find the best match and then return the top N.
+
+I've basically spent the entire Hackathon up until this point
+understanding the problem and doing set up/exploratory work. I think
+that will work given the task I've set myself, but in the future it'd
+probably be better start sprinting right off the starting gun.
+
+### 07:41
+
+Back at it after a bit of sleep, a change of clothes and a smidge of
+deodorant. For Aiur!
